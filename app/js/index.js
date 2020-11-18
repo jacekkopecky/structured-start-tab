@@ -216,6 +216,10 @@ function detectKeydown(e) {
     });
   }
 
+  if (e.key === 'b' && (e.metaKey || e.ctrlKey)) {
+    toggleBookmarks();
+  }
+
   if (e.code === 'Escape') {
     if (el.body.classList.contains('editing')) {
       editCancel();

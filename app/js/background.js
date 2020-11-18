@@ -33,18 +33,5 @@ function menuInstaller() {
   }
 }
 
-function commandReceived(command) {
-  chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
-    if (tabs.length === 0) return;
-    chrome.tabs.get(tabs[0].id, tab => {
-      if (urls.includes(tab.url)) {
-        chrome.tabs.sendMessage(tab.id, { item: command });
-      }
-    });
-  });
-}
-
 chrome.runtime.onInstalled.addListener(menuInstaller);
 chrome.contextMenus.onClicked.addListener(menuClicked);
-
-chrome.commands.onCommand.addListener(commandReceived);

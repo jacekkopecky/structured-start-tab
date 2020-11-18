@@ -30,14 +30,5 @@
     "web_accessible_resources": [
         "data/*",
         "chrome://settings/strings.js"
-    ],
-    "commands": {
-        "toggle-sidebar": {
-            "suggested_key": {
-                "default": "Ctrl+B",
-                "mac": "Command+B"
-            },
-            "description": "Toggle Sidebar"
-        }
-    }
+    ]
 }
